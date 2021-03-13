@@ -17,9 +17,11 @@
 
 <hr />
 
-<div class="alert alert-danger">No se encontro nada con el termino abc</div>
+<div *ngIf="hayError" class="alert alert-danger">
+  No se encontro nada con el termino {{ termino | titlecase }}
+</div>
 
-<div class="row">
+<div *ngIf="!hayError" class="row">
   <div class="col">
     <div class="table-responsive">
       <table class="table table-hover">
