@@ -8,7 +8,7 @@ import { Country } from '../../interfaces/pais.interface';
   styles: [],
 })
 export class PorPaisComponent implements OnInit {
-  termino: string = 'pe';
+  termino: string = '';
   hayError: boolean = false;
   paises: Country[] = [];
 
@@ -16,8 +16,10 @@ export class PorPaisComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  buscar(): void {
+  buscar(termino: string): void {
+    this.termino = termino;
     this.hayError = false;
+
     this.paisService.buscarPais(this.termino).subscribe(
       (paises) => {
         this.paises = paises;
