@@ -25,3 +25,11 @@
     </button>
   </div>
 </div>
+
+<p *ngIf="loading" class="alert alert-info">Cargando Paises...</p>
+
+<div *ngIf="paises.length > 0" class="row">
+  <div class="col">
+    <app-pais-table [paises]="paises" class="table-responsive"></app-pais-table>
+  </div>
+</div>
